@@ -5,13 +5,13 @@ const mainColor = 'black';
 
 const shrinkLabelStyles = css`
   top: -14px;
-  font-size: 12px;
+  font-size: 13px;
   color: ${mainColor};
 `;
 
 export const GroupContainer = styled.div`
   position: relative;
-  margin: 45px 0;
+  margin: 25px 0;
 
   input[type='password'] {
     letter-spacing: 0.3em;
@@ -25,11 +25,11 @@ export const FormInputContainer = styled.input`
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 100%;
+  width: 90%;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid ${subColor};
-  margin: 25px 0;
+  border: 2px solid ${subColor};
+  margin: auto;
 
   &:focus {
     outline: none;
@@ -46,8 +46,8 @@ export const FormInputLabel = styled.label`
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  left: 5px;
-  top: 10px;
+  left: 15px;
+  top: 12px;
   transition: 300ms ease all;
 
   &.shrink {
