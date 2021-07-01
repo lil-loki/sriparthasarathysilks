@@ -10,7 +10,9 @@ import {
   SignInTitle,
   ButtonsBarContainer,
   SignInDescription,
-  ButtonSpacer
+  ButtonSpacer,
+  SignUpAndForgotPassContainer,
+  SignUpAndForgotPassLink
 } from './sign-in.styles';
 
 function SignIn() {
@@ -21,6 +23,9 @@ function SignIn() {
       password: ''
     }
   )
+
+
+  
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -44,35 +49,41 @@ function SignIn() {
     }));
   };
 
+  const { email, password } = Formdata;
+
   return (
       <SignInContainer>
         <SignInTitle>SIGN IN</SignInTitle>
         <SignInDescription>Sign in with your email and password</SignInDescription>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete="off">
           <FormInput
             name='email'
             type='email'
             handleChange={handleChange}
-            value={Formdata.email}
+            value={email}
             label='EMAIL'
             required
           />
           <FormInput
             name='password'
             type='password'
-            value={Formdata.password}
+            value={password}
             handleChange={handleChange}
             label='PASSWORD'
             required
           />
           <ButtonsBarContainer>
             <CustomButton type='submit'> Sign in </CustomButton>
-            <ButtonSpacer>Or</ButtonSpacer>
+            <ButtonSpacer>(Or)</ButtonSpacer>
             <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
               Sign in with Google
             </CustomButton>
           </ButtonsBarContainer>
+          <SignUpAndForgotPassContainer>
+            <SignUpAndForgotPassLink to='/signup' >Sign Up</SignUpAndForgotPassLink>
+            <SignUpAndForgotPassLink to='/forgotpassword'>Forgot Password</SignUpAndForgotPassLink>
+          </SignUpAndForgotPassContainer>
         </form>
       </SignInContainer>
     );

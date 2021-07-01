@@ -28,7 +28,11 @@ export const CartItemsContainer = styled.div`
   height: 240px;
   display: flex;
   flex-direction: column;
-  ${'' /* overflow: scroll; */}
-  overflow-y: hidden;
-  overflow-x: hidden; 
+  ${'' /* overflow-y: hidden;
+  overflow-x: hidden;  */}
+  overflow: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
 `;

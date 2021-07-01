@@ -6,12 +6,18 @@ import { createStructuredSelector } from 'reselect';
 import './App.css';
 
 import Header from './components/header/header.component';
-import SignUp from './components/sign-in/sign-in.component';
+import SignIn from './components/sign-in/sign-in.component';
+import SignUp from './components/sign-up/sign-up.component';
+import ForgotPassword from './components/forgot-pass/forgot-pass.component'
+
+import Contact from './pages/Contact/Contact.page';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
+
+
 
 export const App = (props) => {
 
@@ -47,10 +53,23 @@ export const App = (props) => {
                     props.currentUser ? (
                         <Redirect to='/' />
                     ) : (
+                        <SignIn />
+                    )
+                    }
+                />
+                <Route
+                    exact
+                    path='/signup'
+                    render={() =>
+                    props.currentUser ? (
+                        <Redirect to='/' />
+                    ) : (
                         <SignUp />
                     )
                     }
                 />
+                <Route exact path='/forgotpassword' component={ForgotPassword} />
+                <Route exact path='/contact' component={Contact} />
             </Switch>
         </div>
     )
