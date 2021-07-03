@@ -14,12 +14,12 @@ export const SignUpContainer = styled.div`
   height:500px;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  ${'' /* border: 1px solid black; */}
   margin:auto;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  ${'' /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); */}
   background-color: white;
   position:relative;
-  top:20px;
+  ${'' /* top:20px; */}
 `;
 
 export const SignUpTitle = styled.h2`

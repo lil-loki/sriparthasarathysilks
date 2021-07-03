@@ -2,7 +2,7 @@ body {
     /* font-family: 'Open Sans Condensed'; */
     padding: 20px 40px;
     overflow-y: hidden;
-    font-family: 'Akaya Kanadaka', cursive;
+    font-family: 'Akaya Kanadaka', cursive !important;
     font-size: 20px;
     overflow: scroll;
     overflow-x: hidden;
@@ -15,7 +15,7 @@ body {
   
 a {
     text-decoration: none;
-    color: black;
+    color: black ;
   }
 
 
