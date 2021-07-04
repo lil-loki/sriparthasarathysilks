@@ -33,21 +33,16 @@ export const ButtonsBarContainer = styled.div`
   margin:auto;
 `;
 
-export const SignUpAndForgotPassContainer = styled.div`
+export const ForgotPassContainer = styled.div`
   display: flex;
   justify-content:space-evenly;
   margin:20px auto;
 `;
 
-export const SignUpAndForgotPassText = styled.span`
+
+export const ForgotPassText = styled.span`
   text-decoration: underline;
   color:blue;
   cursor: pointer;
-  
-`;
-
-export const SignUpAndForgotPassLink = styled(Link)`
-  text-decoration: underline;
-  color:blue;
   
 `;

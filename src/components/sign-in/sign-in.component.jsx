@@ -11,11 +11,11 @@ import {
   ButtonsBarContainer,
   SignInDescription,
   ButtonSpacer,
-  SignUpAndForgotPassContainer,
-  SignUpAndForgotPassLink
+  ForgotPassContainer,
+  ForgotPassText
 } from './sign-in.styles';
 
-function SignIn() {
+function SignIn({setForgotPassState}) {
 
   const [Formdata,setFormdata]=useState(
     {
@@ -80,10 +80,9 @@ function SignIn() {
               Sign in with Google
             </CustomButton>
           </ButtonsBarContainer>
-          {/* <SignUpAndForgotPassContainer>
-            <SignUpAndForgotPassLink to='/signup' >Sign Up</SignUpAndForgotPassLink>
-            <SignUpAndForgotPassLink to='/forgotpassword'>Forgot Password</SignUpAndForgotPassLink>
-          </SignUpAndForgotPassContainer> */}
+          <ForgotPassContainer>
+            <ForgotPassText onClick={()=>{setForgotPassState(true)}}>Forgot Password</ForgotPassText>
+          </ForgotPassContainer>
         </form>
       </SignInContainer>
     );

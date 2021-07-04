@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -9,6 +9,7 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 
 import { ReactComponent as Logo } from '../../assets/logo.svg';
+import AuthModal from '../modal/modal.component';
 
 import {
   HeaderContainer,
@@ -17,8 +18,9 @@ import {
   OptionLink
 } from './header.styles';
 
-const Header = ({ currentUser, hidden }) => (
+const Header = ({ currentUser, hidden }) => {
   
+  return(  
   <HeaderContainer>
     <LogoContainer to='/'>
       <Logo className='logo' />
@@ -31,13 +33,14 @@ const Header = ({ currentUser, hidden }) => (
           SIGN OUT
         </OptionLink>
       ) : (
-        <OptionLink to='/signin'>SIGN IN</OptionLink>
+        <AuthModal />
       )}
       <CartIcon />
     </OptionsContainer>
     {hidden ? null : <CartDropdown />}
   </HeaderContainer>
 );
+}
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,

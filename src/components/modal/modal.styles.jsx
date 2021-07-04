@@ -62,3 +62,10 @@ export const ModalHeaderSignUp = styled.div`
   align-items: center;
   ${getStyles2}
 `;
+
+export const Optiondiv = styled.div`
+  padding: 10px 15px;
+  cursor: pointer;
+  color:black;
+  font-size: 20px ;
+`;

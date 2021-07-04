@@ -9,10 +9,12 @@ import {
     ButtonsBarContainer,
     ForgotPasswordContainer,
     ForgotPasswordDescription,
-    ForgotPasswordTitle
+    ForgotPasswordTitle,
+    BackContainer,
+    BackText
   } from './forgot-pass.styles';
 
-function ForgotPassword() {
+function ForgotPassword({setForgotPassState}) {
     const [email, setEmail] = useState('')
 
     const handleChange = event => {
@@ -23,6 +25,7 @@ function ForgotPassword() {
         event.preventDefault();
         await auth.sendPasswordResetEmail(email)
         .then(alert("Password Reset Link Is Sent To Email Id"))
+        .then(setForgotPassState(false))
         .catch((error) => {
             alert(error.message)
           });
@@ -45,6 +48,9 @@ function ForgotPassword() {
               <CustomButton type='submit'>Reset Password</CustomButton>
             </ButtonsBarContainer>
           </form>
+          <BackContainer>
+            <BackText onClick={()=>{setForgotPassState(false)}}>Back</BackText>
+          </BackContainer>
         </ForgotPasswordContainer>
       );
 }

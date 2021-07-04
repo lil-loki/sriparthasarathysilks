@@ -7,11 +7,6 @@ import './App.css';
 
 
 import Header from './components/header/header.component';
-import SignIn from './components/sign-in/sign-in.component';
-import SignUp from './components/sign-up/sign-up.component';
-import ForgotPassword from './components/forgot-pass/forgot-pass.component'
-
-import Example from './components/modal/modal.component';
 
 import Contact from './pages/Contact/Contact.page';
 
@@ -48,31 +43,7 @@ export const App = (props) => {
     return (
         <div>
             <Header />
-            <Example />
             <Switch>
-                <Route
-                    exact
-                    path='/signin'
-                    render={() =>
-                    props.currentUser ? (
-                        <Redirect to='/' />
-                    ) : (
-                        <SignIn />
-                    )
-                    }
-                />
-                <Route
-                    exact
-                    path='/signup'
-                    render={() =>
-                    props.currentUser ? (
-                        <Redirect to='/' />
-                    ) : (
-                        <SignUp />
-                    )
-                    }
-                />
-                <Route exact path='/forgotpassword' component={ForgotPassword} />
                 <Route exact path='/contact' component={Contact} />
             </Switch>
         </div>

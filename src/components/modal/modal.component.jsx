@@ -5,28 +5,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import SignIn from '../sign-in/sign-in.component';
 import SignUp from '../sign-up/sign-up.component';
+import ForgotPassword from '../forgot-pass/forgot-pass.component';
 
-import {ModalHeaderMainContainer,ModalHeaderSignIn,ModalHeaderSignUp,ModalHeaderCustom} from './modal.styles'
+import {ModalHeaderMainContainer,ModalHeaderSignIn,ModalHeaderSignUp,ModalHeaderCustom,Optiondiv} from './modal.styles'
 
 
-function Example() {
+function AuthModal() {
     const [modalState, setModalState] = useState(false);
     const [signInSignUpState, setSignInSignUpState] = useState(true);
+    const [forgotPassState, setForgotPassState] = useState(false);
   
     const handleClose = () => setModalState(false);
     const handleShow = () => setModalState(true);
 
-    const handleSignIn = () => setSignInSignUpState(false);
-    const handleSignUp= () => setSignInSignUpState(true);
+    const handleSignIn = () => {
+      setSignInSignUpState(true);
+      setForgotPassState(false);      
+    };
+    const handleSignUp= () => setSignInSignUpState(false);
 
 
 
   
     return (
       <>
-        <Button variant="primary" onClick={handleShow}>
-          Launch static backdrop modal
-        </Button>
+        <Optiondiv onClick={handleShow}>
+          SIGN IN
+        </Optiondiv>
   
         <Modal
           show={modalState}
@@ -36,12 +41,12 @@ function Example() {
         >
           <ModalHeaderCustom>
           <ModalHeaderMainContainer>
-            <ModalHeaderSignIn onClick={handleSignUp} signInSignUpState={signInSignUpState}>Sign In</ModalHeaderSignIn>
-            <ModalHeaderSignUp onClick={handleSignIn} signInSignUpState={signInSignUpState}>Sign Up</ModalHeaderSignUp>    
+            <ModalHeaderSignIn onClick={handleSignIn} signInSignUpState={signInSignUpState}>Sign In</ModalHeaderSignIn>
+            <ModalHeaderSignUp onClick={handleSignUp} signInSignUpState={signInSignUpState}>Sign Up</ModalHeaderSignUp>    
           </ModalHeaderMainContainer>
           </ModalHeaderCustom>
           <Modal.Body>
-          {signInSignUpState?<SignIn />:<SignUp />}            
+          {signInSignUpState?forgotPassState?<ForgotPassword setForgotPassState={setForgotPassState}/>:<SignIn setForgotPassState={setForgotPassState} />:<SignUp />}            
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
@@ -53,4 +58,4 @@ function Example() {
     );
   }
 
-export default Example;
+export default AuthModal;
