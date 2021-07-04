@@ -4,7 +4,7 @@ const subColor = 'grey';
 const mainColor = 'black';
 
 const shrinkLabelStyles = css`
-  top: -14px;
+  top: -16px;
   font-size: 13px;
   color: ${mainColor};
 `;
@@ -30,6 +30,7 @@ export const FormInputContainer = styled.input`
   border-radius: 0;
   border: 2px solid ${subColor};
   margin: auto;
+  
 
   &:focus {
     outline: none;
@@ -46,7 +47,7 @@ export const FormInputLabel = styled.label`
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  left: 5%;
+  left: 7%;
   top: 12px;
   transition: 300ms ease all;
 

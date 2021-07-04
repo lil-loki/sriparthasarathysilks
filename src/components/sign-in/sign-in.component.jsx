@@ -80,10 +80,10 @@ function SignIn() {
               Sign in with Google
             </CustomButton>
           </ButtonsBarContainer>
-          <SignUpAndForgotPassContainer>
+          {/* <SignUpAndForgotPassContainer>
             <SignUpAndForgotPassLink to='/signup' >Sign Up</SignUpAndForgotPassLink>
             <SignUpAndForgotPassLink to='/forgotpassword'>Forgot Password</SignUpAndForgotPassLink>
-          </SignUpAndForgotPassContainer>
+          </SignUpAndForgotPassContainer> */}
         </form>
       </SignInContainer>
     );

@@ -26,4 +26,6 @@ export const OptionsContainer = styled.div`
 export const OptionLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+  color:black;
+  font-size: 20px ;
 `;

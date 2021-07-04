@@ -1,19 +1,23 @@
 import React,{useState} from 'react'
 
 import {Button,Modal} from 'react-bootstrap';
-import SignIn from '../sign-in/sign-in.component';
-import SignUp from '../sign-up/sign-up.component';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Example() {
-    const [show, setShow] = useState(false);
-    const [show1, setShow1] = useState(false);
-  
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+import SignIn from '../sign-in/sign-in.component';
+import SignUp from '../sign-up/sign-up.component';
 
-    const handleSignIn = () => setShow1(false);
-    const handleSignUp= () => setShow1(true);
+import {ModalHeaderMainContainer,ModalHeaderSignIn,ModalHeaderSignUp,ModalHeaderCustom} from './modal.styles'
+
+
+function Example() {
+    const [modalState, setModalState] = useState(false);
+    const [signInSignUpState, setSignInSignUpState] = useState(true);
+  
+    const handleClose = () => setModalState(false);
+    const handleShow = () => setModalState(true);
+
+    const handleSignIn = () => setSignInSignUpState(false);
+    const handleSignUp= () => setSignInSignUpState(true);
 
 
 
@@ -25,21 +29,24 @@ function Example() {
         </Button>
   
         <Modal
-          show={show}
+          show={modalState}
           onHide={handleClose}
           backdrop="static"
           keyboard={false}
         >
-          <Modal.Header closeButton>
-          </Modal.Header>
+          <ModalHeaderCustom>
+          <ModalHeaderMainContainer>
+            <ModalHeaderSignIn onClick={handleSignUp} signInSignUpState={signInSignUpState}>Sign In</ModalHeaderSignIn>
+            <ModalHeaderSignUp onClick={handleSignIn} signInSignUpState={signInSignUpState}>Sign Up</ModalHeaderSignUp>    
+          </ModalHeaderMainContainer>
+          </ModalHeaderCustom>
           <Modal.Body>
-          {show1?<SignIn />:<SignUp />}            
+          {signInSignUpState?<SignIn />:<SignUp />}            
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleSignIn}>
+            <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary"   onClick={handleSignUp}>Understood</Button>
           </Modal.Footer>
         </Modal>
       </>

@@ -23,7 +23,7 @@ export const SignUpContainer = styled.div`
 `;
 
 export const SignUpTitle = styled.h2`
-  margin: 30px auto 0px;
+  margin: 10px auto 0px;
 `;
 
 export const SignUpDescription = styled.span`
