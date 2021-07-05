@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const ContactMainContainer = styled.div`
     margin-top:50px;  
 `;
@@ -17,6 +18,7 @@ export const ContactTitleContainer = styled.div`
 export const ContactTitle = styled.h2`
  
 `;
+
 export const Contactdescription = styled.span`
 
 `;

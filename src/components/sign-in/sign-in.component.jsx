@@ -12,7 +12,8 @@ import {
   SignInDescription,
   ButtonSpacer,
   ForgotPassContainer,
-  ForgotPassText
+  ForgotPassText,
+  Google
 } from './sign-in.styles';
 
 function SignIn({setForgotPassState}) {
@@ -36,7 +37,13 @@ function SignIn({setForgotPassState}) {
       await auth.signInWithEmailAndPassword(email, password);
       setFormdata({ email: '', password: '' });
     } catch (error) {
-      console.log(error);
+      console.log(error)
+      if(error.code==='auth/wrong-password'){
+        alert("Password is Wrong!!!! Please Check Your Password.")
+      }
+      else if(error.code==='auth/user-not-found'){
+        alert("User Does Not Exist!!! Please Sign Up or Check Your Email Id.")
+      }
     }
   };
 
@@ -77,7 +84,7 @@ function SignIn({setForgotPassState}) {
             <CustomButton type='submit'> Sign in </CustomButton>
             <ButtonSpacer>(Or)</ButtonSpacer>
             <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-              Sign in with Google
+              <Google/>Sign in with Google
             </CustomButton>
           </ButtonsBarContainer>
           <ForgotPassContainer>

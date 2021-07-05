@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { ReactComponent as GoogleIcon } from '../../assets/google.svg';
 
 
 export const SignInContainer = styled.div`
@@ -45,4 +45,10 @@ export const ForgotPassText = styled.span`
   color:blue;
   cursor: pointer;
   
+`;
+
+export const Google = styled(GoogleIcon)`
+  width:30px;
+  height:30px;
+  margin:auto 10px;
 `;

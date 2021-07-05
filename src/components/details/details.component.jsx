@@ -5,7 +5,8 @@ import {
     DetailsContainer,
     DetailsText,
     DetailsLink,
-    DetailsHead
+    DetailsHead,
+    MapContainer
 } from './details.styles'
 
 
@@ -36,7 +37,8 @@ function Details() {
                 <DetailsText>
                     <DetailsLink href={mapurl}>No.195/96. Big Street, Triplicane, Chennai - 600 005, India.</DetailsLink>
                 </DetailsText>
-            </DetailsContainer>             
+            </DetailsContainer>
+            <MapContainer onClick={() => {window.location.href = mapurl}}></MapContainer>             
         </DetailsMainContainer>     
  
     )
