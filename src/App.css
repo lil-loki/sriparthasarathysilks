@@ -1,16 +1,16 @@
 body {
     /* font-family: 'Open Sans Condensed'; */
     padding: 20px 40px !important;
-    overflow-y: hidden;
     font-family: 'Akaya Kanadaka', cursive !important;
     font-size: 20px ;
-    overflow: scroll;
+    overflow-y: scroll !important;
     overflow-x: hidden;
 
   }
 
   body::-webkit-scrollbar {
-    width: 3px;
+    width: 30px !important;
+    color: #fff !important;
   }
   
 a{
