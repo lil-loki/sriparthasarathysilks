@@ -9,11 +9,13 @@ import './App.css';
 import Header from './components/header/header.component';
 
 import Contact from './pages/Contact/Contact.page';
+import Home from './pages/Home/home.page';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
+
 
 
 
@@ -44,6 +46,7 @@ export const App = (props) => {
         <div>
             <Header />
             <Switch>
+                <Route exact path='/' component={Home} />
                 <Route exact path='/contact' component={Contact} />
             </Switch>
         </div>
